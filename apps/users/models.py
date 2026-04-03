@@ -1,3 +1,7 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# Create your models here.
+
+class User(AbstractUser):
+    "Используем AbstractUser, чтобы добавить необходимое нам поле личного баланса"
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
